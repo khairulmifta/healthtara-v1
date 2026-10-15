@@ -1,0 +1,13 @@
+*.exe
+*.ico
+legacy_v3
+source/cmd/merge
+source/scripts
+source/*_test.go
+source/*.syso
+**/.git
+**/test_user_data
+**/node_modules
+**/backups
+**/*.log
+**/running.json

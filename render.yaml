@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: healthtara-v1
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/ping
+    envVars:
+      - key: HEALTHTARA_MODE
+        value: cloud
+      - key: HEALTHTARA_DATA_DIR
+        value: /var/data
+# Untuk produksi persisten, pilih paket yang mendukung disk, pasang /var/data,
+# lalu tetapkan HEALTHTARA_ADMIN_KEY melalui pengaturan hosting. Jangan taruh
+# kunci admin pada YAML atau repository. Paket free ini memakai baca saja
+# bila kunci admin tidak disetel. Impor/log lokal akan hilang saat redeploy
+# tanpa disk persisten; lihat tutorial sebelum mengaktifkan penyuntingan.
